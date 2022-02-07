@@ -8,7 +8,7 @@ import learning_service_client
 
 @allure.step("Positive case: Check get example")
 @pytest.mark.sanity
-@pytest.mark.testpositive
+@pytest.mark.test_positive
 def test_get_example_positive():
     """
     If all data is valid - test passes
@@ -21,7 +21,7 @@ def test_get_example_positive():
 
 
 @allure.step("Fail example case: Check get example")
-@pytest.mark.testfail
+@pytest.mark.test_fail
 def test_get_example_fail():
     """
     Wrong assert to see failed test

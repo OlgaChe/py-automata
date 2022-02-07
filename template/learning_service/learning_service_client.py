@@ -1,7 +1,7 @@
 import requests
 import json
 
-#import config
+# import config
 from requests.auth import HTTPBasicAuth
 
 from learning_config import CONF
