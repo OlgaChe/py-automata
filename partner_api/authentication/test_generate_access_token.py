@@ -22,6 +22,8 @@ def test_generate_access_token():
     assert parse_json["status"] == "success"
     assert parse_json["data"]["access_token"] != ""
 
+    print(parse_json["data"]["access_token"] )
+
 
 # positive case
 @pytest.mark.sanity
