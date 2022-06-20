@@ -9,7 +9,7 @@ config = partner_api_config.CONF.get("DEV")
 
 # Generates an Access Token
 # GET {{baseUrl}}/authenticate
-def generate_access_token(client_id, client_secret):
+def get_generate_access_token(client_id, client_secret):
     url = config.get("baseUrl") + "/authenticate"
     headers = {
         'client_id': client_id,
