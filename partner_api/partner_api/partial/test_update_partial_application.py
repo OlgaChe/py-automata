@@ -2,7 +2,7 @@ from datetime import datetime
 import random
 import sys
 
-from . import put_update_partial_application
+from . import put_update_partial_application_client
 
 import pytest
 import json
@@ -18,7 +18,7 @@ from partner_api.partner_api import partner_api_config
 def set_env():
     env = sys.argv[2]
     print("\nEnv is " + env)
-    put_update_partial_application.config = partner_api_config.CONF.get(env)
+    put_update_partial_application_client.config = partner_api_config.CONF.get(env)
 
 
 # Update an partial application
@@ -43,7 +43,7 @@ def test_put_update_partial_application_positive_all_required_data(new_applicati
         json_data["owners"][0]["phonenumbers"][0]["number"] = "212" + str(random.randint(0, 9999999)).zfill(10)
         json_data["owners"][0]["emails"][0]["email"] = "email_owner+" + datetime.now().strftime('%m%d%y%H%M%S') + "@example.com"
 
-    test_response = put_update_partial_application.put_update_partial_application(token, json_data, uuid)
+    test_response = put_update_partial_application_client.put_update_partial_application(token, json_data, uuid)
     parse_json = json.loads(json.dumps(test_response.json()))
 
     assert test_response.status_code is 200
