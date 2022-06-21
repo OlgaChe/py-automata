@@ -24,6 +24,7 @@ def set_env():
 # positive case
 @pytest.mark.parametrize('new_application_json', ["partner_api/application/sanity_test/post_create_new_application.json"])
 @pytest.mark.sanity
+@pytest.mark.positive
 @pytest.mark.test_post_create_new_application_positive
 def test_post_create_new_application_positive(new_application_json):
     """

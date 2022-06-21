@@ -25,6 +25,7 @@ def set_env():
 @pytest.mark.parametrize('direction', ["desc"])
 @pytest.mark.parametrize('sort', ["requested_funding"])
 @pytest.mark.sanity
+@pytest.mark.positive
 @pytest.mark.test_get_return_list_of_applications_client_positive
 def test_get_return_list_of_applications_client_positive(filter_param, limit, page, direction, sort):
     """

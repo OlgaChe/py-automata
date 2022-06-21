@@ -23,7 +23,9 @@ def set_env():
 # GET {{baseUrl}}/authenticate
 # positive case
 @pytest.mark.sanity
-def test_generate_access_token():
+@pytest.mark.positive
+@pytest.mark.test_generate_access_token_positive_positive
+def test_generate_access_token_positive():
     """
     Positive case: Success auth
     """
@@ -43,6 +45,8 @@ def test_generate_access_token():
 
 # negative case
 @pytest.mark.sanity
+@pytest.mark.negative
+@pytest.mark.test_generate_access_token_negative
 def test_generate_access_token_negative():
     """
     Negative case: Forbidden status
