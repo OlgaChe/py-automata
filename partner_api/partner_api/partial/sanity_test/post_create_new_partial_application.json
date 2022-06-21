@@ -1,0 +1,22 @@
+{
+  "owners": [
+    {
+      "first_name": "",
+      "last_name": "",
+      "emails": [
+        {
+          "email": ""
+        }
+      ],
+      "phonenumbers": [
+        {
+          "number": "",
+          "type": "cell"
+        }
+      ]
+    }
+  ],
+  "business": {
+    "name": "Hooli"
+  }
+}
