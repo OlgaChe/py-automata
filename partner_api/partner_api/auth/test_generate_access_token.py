@@ -19,6 +19,8 @@ def set_env():
     get_generate_access_token_client.config = partner_api_config.CONF.get(env)
 
 
+# Generates an Access Token
+# GET {{baseUrl}}/authenticate
 # positive case
 @pytest.mark.sanity
 def test_generate_access_token():
