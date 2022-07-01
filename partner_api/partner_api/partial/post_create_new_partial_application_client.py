@@ -1,7 +1,6 @@
 import json
 from datetime import datetime
 import random
-
 import requests
 
 # import config
@@ -35,16 +34,10 @@ def post_create_new_partial_application(token, new_application_json):
     print("\n")
     print("///REQUEST///\n")
     print("POST " + response.request.url + "\n")
-    print(response.request.body)
+    print(json.dumps(json.loads(response.request.body), indent=2))
     print("\n")
     print("///RESPONSE///\n")
-    print(response.json())
+    print(json.dumps(response.json(), indent=2))
     print("\n")
 
     return response
-
-
-# token = '3bedf587d3b21eaad83d667e1cf05712314f713a82feb492f681c5b6139ce3a8'
-# new_application_json = "./sanity_test/post_create_new_partial_application.json"
-
-# post_create_new_application(token, new_application_json)
