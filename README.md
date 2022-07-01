@@ -1,2 +1,2 @@
-# py-automata
-REST API automata python
+# Partner API
+Partner API automata python
