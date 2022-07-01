@@ -20,11 +20,10 @@ def post_create_new_application(token, new_application_json):
         json_data["owners"][0]["first_name"] = "qa_" + datetime.now().strftime('%m%d%y%H%M%S') + "_FN"
         json_data["owners"][0]["last_name"] = "qa_" + datetime.now().strftime('%m%d%y%H%M%S') + "_LN"
         json_data["owners"][0]["ssn"] = ""
-        json_data["owners"][0]["phonenumbers"][0]["number"] = "212" + str(random.randint(0, 9999999)).zfill(10)
+        json_data["owners"][0]["phonenumbers"][0]["number"] = "888" + str(random.randint(0, 9999999)).zfill(7)
         json_data["owners"][0]["emails"][0]["email"] = "email_owner+" + datetime.now().strftime('%m%d%y%H%M%S') + "@example.com"
-        json_data["business"]["locations"][0]["phonenumbers"][0]["number"]["value"] = "212" + str(random.randint(0, 9999999)).zfill(10)
-        json_data["business"]["locations"][0]["phonenumbers"][1]["number"]["value"] = "212" + str(random.randint(0, 9999999)).zfill(10)
-        json_data["business"]["locations"][0]["landlord_mortgage_phonenumber"] = "212" + str(random.randint(0, 9999999)).zfill(10)
+        json_data["business"]["locations"][0]["phonenumbers"][0]["number"]["value"] = "888" + str(random.randint(0, 9999999)).zfill(7)
+        json_data["business"]["locations"][0]["landlord_mortgage_phonenumber"] = "888" + str(random.randint(0, 9999999)).zfill(7)
 
     headers = {
         'Token': token,

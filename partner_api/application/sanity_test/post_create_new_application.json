@@ -47,15 +47,7 @@
               "value": ""
             },
             "type": {
-              "value": "other"
-            }
-          },
-          {
-            "number": {
-              "value": ""
-            },
-            "type": {
-              "value": "other"
+              "value": "home"
             }
           }
         ],
