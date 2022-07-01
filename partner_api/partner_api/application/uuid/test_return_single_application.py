@@ -27,7 +27,9 @@ def test_get_return_single_application_positive_etalon():
     Positive case: get single application with etalon uuid
     """
 
+    # get access token
     token = test_generate_access_token.test_generate_access_token_positive()
+
     uuid = get_return_single_application_client.config.get("uuid").get("etalon_uuid")
 
     test_response = get_return_single_application_client.get_return_single_applications(token, uuid)
@@ -44,6 +46,7 @@ def test_get_return_single_application_positive_param(uuid):
     Positive case: get single application with parametrized uuid for use in other tests
     """
 
+    # get access token
     token = test_generate_access_token.test_generate_access_token_positive()
 
     test_response = get_return_single_application_client.get_return_single_applications(token, uuid)
