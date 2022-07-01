@@ -5,10 +5,10 @@ import pytest
 import json
 
 from . import get_return_list_of_applications_client
-from partner_api.partner_api.auth import test_generate_access_token
+from partner_api.auth import test_generate_access_token
 
 # import config
-from partner_api.partner_api import partner_api_config
+from .. import partner_api_config
 
 
 # set up config

@@ -5,10 +5,10 @@ import pytest
 import json
 
 from . import post_create_new_partial_application_client
-from partner_api.partner_api.auth import test_generate_access_token
+from partner_api.auth import test_generate_access_token
 
 # import config
-from partner_api.partner_api import partner_api_config
+from .. import partner_api_config
 
 
 # set up config
@@ -25,7 +25,7 @@ def set_env():
 # However, a partial submission will only be submitted to underwriting once all necessary
 # POST {{baseUrl}}/partial
 # positive case
-@pytest.mark.parametrize('new_application_json', ["partner_api/partial/sanity_test/post_create_new_partial_application.json"])
+@pytest.mark.parametrize('new_application_json', ["partial/sanity_test/post_create_new_partial_application.json"])
 @pytest.mark.sanity
 @pytest.mark.positive
 @pytest.mark.test_post_create_new_partial_application_positive

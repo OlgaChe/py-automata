@@ -7,7 +7,7 @@ import json
 from . import get_generate_access_token_client
 
 # import config
-from partner_api.partner_api import partner_api_config
+from .. import partner_api_config
 
 
 # set up config

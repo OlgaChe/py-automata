@@ -2,7 +2,7 @@ import json
 import requests
 
 # import config
-from partner_api.partner_api import partner_api_config
+from partner_api import partner_api_config
 
 # set up config
 config = partner_api_config.CONF.get("DEV")

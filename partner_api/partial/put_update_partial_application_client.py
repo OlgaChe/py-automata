@@ -1,19 +1,17 @@
 import json
-from datetime import datetime
-import random
 import requests
 
 # import config
-from partner_api.partner_api import partner_api_config
+from partner_api import partner_api_config
 
 # set up config
 config = partner_api_config.CONF.get("DEV")
 
 
-# Update an application
-# PUT {{baseUrl}}/application/:uuid
-def put_update_application(token, new_application_json, uuid):
-    url = config.get("baseUrl") + "/application/" + uuid
+# Update an partial application
+# PUT {{baseUrl}}/partial/:uuid
+def put_update_partial_application(token, new_application_json, uuid):
+    url = config.get("baseUrl") + "/partial/" + uuid
 
     headers = {
         'Token': token,
