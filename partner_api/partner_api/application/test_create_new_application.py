@@ -1,14 +1,14 @@
+#  pytest -c "DEV" -s -v -m <test_name> --disable-pytest-warnings
+
 import sys
-
-from . import post_create_new_application_client
-
 import pytest
 import json
 
+from . import post_create_new_application_client
+from partner_api.partner_api.auth import test_generate_access_token
+
 # import config
 from partner_api.partner_api import partner_api_config
-
-#  pytest -c "DEV" -s -v -m <test_name> --disable-pytest-warnings
 
 
 # set up config
@@ -31,7 +31,8 @@ def test_post_create_new_application_positive(new_application_json):
     Positive case: create new full application with valid data
     """
 
-    token = '3bedf587d3b21eaad83d667e1cf05712314f713a82feb492f681c5b6139ce3a8'
+    # get access token
+    token = test_generate_access_token.test_generate_access_token_positive()
 
     test_response = post_create_new_application_client.post_create_new_application(token, new_application_json)
     parse_json = json.loads(json.dumps(test_response.json()))
@@ -41,6 +42,10 @@ def test_post_create_new_application_positive(new_application_json):
     assert parse_json["uuid"] != ""
     assert parse_json["offer_link"] != ""
 
-    print(parse_json["uuid"])
-    return parse_json["uuid"]
+    # get uuid
+    uuid = parse_json["uuid"]
+    print(uuid)
+
+    # return uuid for future use
+    return uuid
 
