@@ -25,7 +25,6 @@ dist/
 
 # JetBrains IDE
 .idea/
-__init__.py
 
 # Unit test reports
 TEST*.xml
