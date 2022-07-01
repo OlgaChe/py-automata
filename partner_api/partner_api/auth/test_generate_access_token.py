@@ -1,14 +1,13 @@
+#  pytest -c "DEV" -s -v -m <test_name> --disable-pytest-warnings
+
 import sys
-
-from . import get_generate_access_token_client
-
 import pytest
 import json
 
+from . import get_generate_access_token_client
+
 # import config
 from partner_api.partner_api import partner_api_config
-
-#  pytest -c "DEV" -s -v -m <test_name> --disable-pytest-warnings
 
 
 # set up config
@@ -39,8 +38,11 @@ def test_generate_access_token_positive():
     assert parse_json["status"] == "success"
     assert parse_json["data"]["access_token"] != ""
 
-    print(parse_json["data"]["access_token"])
-    return parse_json["data"]["access_token"]
+    # get access_token
+    token = parse_json["data"]["access_token"]
+
+    # return access token for future use
+    return token
 
 
 # negative case
