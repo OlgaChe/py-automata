@@ -1,3 +1,4 @@
+import json
 import requests
 
 # import config
@@ -24,17 +25,7 @@ def get_return_list_of_applications(token, filter_param, limit, page, direction,
     print("///REQUEST///\n")
     print("GET " + response.request.url + "\n")
     print("///RESPONSE///\n")
-    print(response.json())
+    print(json.dumps(response.json(), indent=2))
     print("\n")
 
     return response
-
-
-# token = ''
-# filter_param = ''
-# limit = 20
-# page = 2
-# direction = 'desc'
-# sort = 'requested_funding'
-
-# get_return_list_of_applications(token, filter_param, limit, page, direction, sort)
